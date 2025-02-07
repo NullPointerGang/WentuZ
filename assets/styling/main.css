@@ -1,0 +1,89 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('/assets/fonts/Kanit-Regular.ttf') format('truetype');
+    font-weight: 400; /* Обычный вес */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('/assets/fonts/Kanit-Medium.ttf') format('truetype');
+    font-weight: 500; /* Средний вес */
+    font-style: normal;
+}
+
+body {
+    background-color: #0B0E16;
+    color: #ffffff;
+    font-family: 'Kanit';
+    font-weight: 500;
+    -webkit-user-select: none; /* для Chrome, Safari */
+    -moz-user-select: none;    /* для Firefox */
+    -ms-user-select: none;     /* для IE */
+    user-select: none; 
+}
+img {
+    pointer-events: none;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #1D202B;
+    color: white;
+    margin: 0;
+    max-height: 100px;
+}
+
+#current_track_cover {
+    width: 73px;
+    height: 73px;
+    border: 0px solid;
+    border-radius: 36px;
+    margin: 10px;
+}
+
+#current_track_info {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+#current_track_credits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#current_track_credits p{
+    margin: 0;
+}
+
+#current_track_title {
+    font-size: 18;
+}
+
+#current_track_artist {
+    font-size: 14;
+    font-family: "Kanit";
+    font-weight: 400;
+}
+
+.playback-buttons {
+    width: 72px;
+    height: 72px;
+}
+#playback {
+    background-color: blue;
+    border: none;
+}
+#playback:hover {
+    background-color: pink;
+}

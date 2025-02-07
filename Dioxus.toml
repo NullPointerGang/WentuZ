@@ -1,0 +1,25 @@
+[application]
+
+# App (Project) Name
+name = "WentuZ"
+
+[web.app]
+
+# HTML title tag content
+title = "Wentu"
+
+# include `assets` in web platform
+[web.resource]
+assets = "./assets"
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
