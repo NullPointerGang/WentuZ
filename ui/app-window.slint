@@ -1,0 +1,73 @@
+import { VerticalBox, HorizontalBox } from "std-widgets.slint";
+
+export component MainWindow inherits Window {
+    background: #0B0E17;
+    preferred-width: 700px;
+    preferred-height: 500px;
+    min-width: 700px;
+    min-height: 500px;
+    icon: @image-url("../assets/img/app_icon.png");
+    title: @tr("WentuZ");
+
+    in property <image> album_cover: @image-url("../assets/img/default-album-artwork.png");
+    in property <string> song_title: "Название песни";
+    in property <string> artist_name: "Исполнитель";
+    in property <float> progress: 0.4; // Прогресс (от 0 до 1)
+    in property <float> volume: 0.5; // Громкость (от 0 до 1)
+
+    Rectangle {
+        background: #1D202B;
+        y: parent.height - 100px;
+        height: 100px;
+        width: parent.width;
+
+        HorizontalLayout {
+            alignment: center;
+            spacing: 15px;
+            padding: 10px;
+
+            // Круглая обложка
+            Rectangle {
+                clip: true;
+                width: 73px;
+                height: 73px;
+                border-radius: 43px;
+                Image {
+                    source: album_cover;
+                    width: 73px;
+                    height: 73px;
+                }
+            }
+
+            // Текст с информацией о треке
+            VerticalLayout {
+                spacing: 5px;
+                Text {
+                    text: song_title;
+                    color: white;
+                    font-size: 16px;
+                }
+                Text {
+                    text: artist_name;
+                    color: #B0B0B0;
+                    font-size: 14px;
+                }
+            }
+
+            // Прогресс-бар
+            Rectangle {
+                width: 250px;
+                height: 10px;
+                background: #3A3F51;
+                border-radius: 5px;
+
+                Rectangle {
+                    width: parent.width * progress;
+                    height: parent.height;
+                    background: #FF4081;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
